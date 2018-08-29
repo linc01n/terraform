@@ -47,6 +47,8 @@ func SuggestImport(r *InstanceDiff) string {
 		return lc_import(r, filters)
 	case "aws_db_instance":
 		return rds_import(r, filters)
+	case "aws_elasticache_cluster":
+		return elasticache_import(r, filters)
 	case "aws_elasticache_replication_group":
 		return redis_import(r, filters)
 	case "aws_iam_role":
