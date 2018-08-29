@@ -50,7 +50,9 @@ func SuggestImport(r *InstanceDiff) string {
 	case "aws_elasticache_cluster":
 		return elasticache_import(r, filters)
 	case "aws_elasticache_replication_group":
-		return redis_import(r, filters)
+		return elasticache_replication_group_import(r, filters)
+	case "aws_elasticache_parameter_group":
+		return elasticache_parameter_group_import(r, filters)
 	case "aws_iam_role":
 		return iam_role_import(r, filters)
 	case "aws_iam_policy":
@@ -63,8 +65,6 @@ func SuggestImport(r *InstanceDiff) string {
 		return s3_import(r, filters)
 	case "aws_kms_alias":
 		return kms_alias_import(r, filters)
-	case "aws_elasticache_parameter_group":
-		return elasticache_parameter_group_import(r, filters)
 
 	}
 	return ""
